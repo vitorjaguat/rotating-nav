@@ -15,7 +15,7 @@ body {
 .container {
     background-color: #fafafa;
     transform-origin: top left;
-    transition: transform 0.5s linear;
+    transition: transform 0.5s ease-in;
     width: 100vw;
     min-height: 100vh;
     padding: 50px;
@@ -32,12 +32,17 @@ body {
 }
 
 .circle {
-    background-color: #ff7979;
+    background-color: #e1e1e1;
     height: 200px;
     width: 200px;
     border-radius: 50%;
     position: relative;
     transition: transform 0.5s linear;
+}
+
+/* this means: select the .circle inside of .container.show-nav */
+.container.show-nav .circle {
+    transform: rotate(-70deg);
 }
 
 .circle button {
@@ -105,7 +110,18 @@ transform: translateX(-150%);
 nav ul li + li + li {
     margin-left: 30px;
     transform: translateX(-200%);
-    }
+}
+
+nav a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+nav a:hover {
+    color: #FF7979;
+    font-weight: bold;
+}
 
 .content img {
     max-width: 100%;
